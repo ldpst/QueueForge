@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: queueforge-postgres
+    environment:
+      POSTGRES_DB: queueforge
+      POSTGRES_USER: queueforge
+      POSTGRES_PASSWORD: queueforge
+    ports:
+      - "5433:5432"
+    volumes:
+      - queueforge-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  queueforge-postgres-data:

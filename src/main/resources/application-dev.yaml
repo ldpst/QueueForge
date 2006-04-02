@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5433/queueforge
+    username: queueforge
+    password: queueforge
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
