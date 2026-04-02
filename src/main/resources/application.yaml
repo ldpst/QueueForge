@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: queueforge
+  
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+logging:
+  charset:
+    console: UTF-8
+  level:
+    com.zaxxer.hikari: DEBUG
+    org.hibernate.SQL: debug
