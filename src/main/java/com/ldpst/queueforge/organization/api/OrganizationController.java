@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class OrganizationController {
     private final OrganizationService organizationService;
 
-    @PostMapping("/create")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public OrganizationResponse create(@Valid @RequestBody CreateOrganizationRequest request) {
         return organizationService.create(request);
