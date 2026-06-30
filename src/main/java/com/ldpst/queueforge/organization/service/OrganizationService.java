@@ -7,6 +7,7 @@ import com.ldpst.queueforge.organization.entity.OrganizationStatus;
 import java.time.Instant;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ldpst.queueforge.common.exception.ConflictException;
 import com.ldpst.queueforge.organization.dto.CreateOrganizationRequest;
@@ -19,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class OrganizationService {
     private final OrganizationRepository organizationRepository;
 
+    @Transactional
     public OrganizationResponse create(CreateOrganizationRequest request) {
         if (organizationRepository.existsByNameIgnoreCase(request.name())) {
             throw new ConflictException("Organization with this name already exists");
